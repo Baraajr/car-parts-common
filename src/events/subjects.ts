@@ -1,4 +1,4 @@
 export enum Subjects {
-  UserCreated = 'user:created',
+  UserCreated = 'userCreated',
 }
 // interface to make sure event names are consistent
