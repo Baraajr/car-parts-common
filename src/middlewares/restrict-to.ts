@@ -11,3 +11,5 @@ const restrictTo =
 
     next();
   };
+
+export { restrictTo };
