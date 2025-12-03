@@ -1,6 +1,5 @@
-import { Kafka, Producer, ProducerRecord, RecordMetadata } from 'kafkajs';
+import { Stan } from 'node-nats-streaming';
 import { Subjects } from './subjects';
-
 interface Event {
   subject: Subjects;
   data: any;
@@ -8,84 +7,21 @@ interface Event {
 
 export abstract class Publisher<T extends Event> {
   abstract subject: T['subject'];
-  protected producer: Producer;
+  protected client: Stan;
 
-  constructor(producer: Producer) {
-    this.producer = producer;
+  constructor(client: Stan) {
+    this.client = client;
   }
 
-  async publish(data: T['data']): Promise<RecordMetadata[]> {
-    try {
-      const result = await this.producer.send({
-        topic: this.subject,
-        messages: [
-          {
-            value: JSON.stringify(data),
-            // Optional: add key for partitioning
-            // key: data.id,
-            // Optional: add headers
-            // headers: {
-            //   'correlation-id': 'some-id',
-            // },
-          },
-        ],
+  publish(data: T['data']): Promise<void> {
+    return new Promise((resolve, reject) => {
+      this.client.publish(this.subject, JSON.stringify(data), (err) => {
+        if (err) {
+          return reject(err);
+        }
+        console.log('Event published to subject', this.subject);
+        resolve();
       });
-
-      console.log('Event published to topic:', this.subject);
-      return result;
-    } catch (err) {
-      console.error('Error publishing event:', err);
-      throw err;
-    }
-  }
-
-  // Publish multiple messages at once (batch)
-  async publishBatch(dataArray: T['data'][]): Promise<RecordMetadata[]> {
-    try {
-      const result = await this.producer.send({
-        topic: this.subject,
-        messages: dataArray.map((data) => ({
-          value: JSON.stringify(data),
-        })),
-      });
-
-      console.log(
-        `${dataArray.length} events published to topic:`,
-        this.subject
-      );
-      return result;
-    } catch (err) {
-      console.error('Error publishing batch events:', err);
-      throw err;
-    }
-  }
-
-  // Publish with custom partition key
-  async publishWithKey(
-    data: T['data'],
-    key: string
-  ): Promise<RecordMetadata[]> {
-    try {
-      const result = await this.producer.send({
-        topic: this.subject,
-        messages: [
-          {
-            key: key,
-            value: JSON.stringify(data),
-          },
-        ],
-      });
-
-      console.log('Event published to topic:', this.subject, 'with key:', key);
-      return result;
-    } catch (err) {
-      console.error('Error publishing event:', err);
-      throw err;
-    }
-  }
-
-  async disconnect(): Promise<void> {
-    await this.producer.disconnect();
-    console.log('Kafka producer disconnected');
+    });
   }
 }
