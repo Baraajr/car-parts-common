@@ -2,7 +2,7 @@ import { UserRole } from '../types/user-roles';
 import { Subjects } from './subjects';
 
 // to make sure the class consistent subject and data related to that subject
-export interface UserCreatedEvent {
+export interface UserUpdatedEvent {
   subject: Subjects.UserUpdated;
   data: {
     id: string;
