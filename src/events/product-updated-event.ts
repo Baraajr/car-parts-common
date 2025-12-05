@@ -7,8 +7,8 @@ export interface ProductUpdatedEvent {
     id: string;
     name: string;
     imageCover: string;
-    price: Number;
-    priceAfterDiscount?: Number;
+    price: number;
+    priceAfterDiscount?: number;
     category: {
       id: string;
     };
