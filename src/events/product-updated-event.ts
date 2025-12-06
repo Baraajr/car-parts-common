@@ -5,9 +5,9 @@ export interface ProductUpdatedEvent {
   subject: Subjects.productUpdated;
   data: {
     id: string;
-    name: string;
+    name?: string;
     imageCover?: string;
-    price: number;
+    price?: number;
     priceAfterDiscount?: number;
     category?: {
       id: string;
