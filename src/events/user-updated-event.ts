@@ -10,5 +10,6 @@ export interface UserUpdatedEvent {
     email?: string;
     role?: UserRole;
     active?: boolean;
+    profileImg?: string;
   };
 }

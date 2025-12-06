@@ -6,13 +6,13 @@ export interface ProductUpdatedEvent {
   data: {
     id: string;
     name: string;
-    imageCover: string;
+    imageCover?: string;
     price: number;
     priceAfterDiscount?: number;
-    category: {
+    category?: {
       id: string;
     };
-    brand: {
+    brand?: {
       id: string;
     };
   };
