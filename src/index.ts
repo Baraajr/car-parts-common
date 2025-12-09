@@ -23,5 +23,8 @@ export * from './events/product-updated-event';
 export * from './events/coupon-created-event';
 export * from './events/coupon-deleted-event';
 export * from './events/coupon-updated-event';
+export * from './events/cart-created-event';
+export * from './events/cart-deleted-event';
+export * from './events/cart-updated-event';
 
 export * from './types/user-roles';

@@ -4,6 +4,8 @@ import { Subjects } from './subjects';
 export interface ProductUpdatedEvent {
   subject: Subjects.productUpdated;
   data: {
+    quantity: number;
+    sold: number;
     id: string;
     name?: string;
     imageCover?: string;
