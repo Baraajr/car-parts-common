@@ -28,3 +28,4 @@ export * from './events/cart-deleted-event';
 export * from './events/cart-updated-event';
 
 export * from './types/user-roles';
+export * from './types/order-status';
