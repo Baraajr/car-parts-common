@@ -18,7 +18,10 @@ export * from './events/subjects';
 export * from './events/user-created-event';
 export * from './events/user-updated-event';
 export * from './events/product-created-event';
-export * from './events//product-deleted-event';
+export * from './events/product-deleted-event';
 export * from './events/product-updated-event';
+export * from './events/coupon-created-event';
+export * from './events/coupon-deleted-event';
+export * from './events/coupon-updated-event';
 
 export * from './types/user-roles';

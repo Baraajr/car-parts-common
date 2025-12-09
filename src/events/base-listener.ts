@@ -7,7 +7,6 @@ interface Event {
 }
 
 export abstract class Listener<T extends Event> {
-  // the subclass should use a generic that extends the Event interface like ticketCreated interface
   abstract subject: T['subject'];
   abstract queueGroupName: string;
   abstract onMessage(data: T['data'], msg: Message): void;

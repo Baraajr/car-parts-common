@@ -38,7 +38,7 @@ import {
   requireAuth,
   validateRequest,
   BadRequestError,
-} from '@abtickets-app/common';
+} from '@car-parts/common';
 
 app.post('/api/resource', requireAuth, validateRequest, (req, res) => {
   if (!req.body.title) {

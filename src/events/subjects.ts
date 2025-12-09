@@ -4,5 +4,8 @@ export enum Subjects {
   ProductCreated = 'product:created',
   ProductDeleted = 'product:deleted',
   productUpdated = 'product:updated',
+  couponCreated = 'coupon:created',
+  couponDeleted = 'coupon:deleted',
+  couponUpdated = 'coupon:updated',
 }
 // interface to make sure event names are consistent
