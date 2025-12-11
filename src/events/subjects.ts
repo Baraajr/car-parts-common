@@ -10,5 +10,7 @@ export enum Subjects {
   cartCreated = 'cart:created',
   cartDeleted = 'cart:deleted',
   cartUpdated = 'cart:updated',
+  OrderCreated = 'order:created',
+  OrderCancelled = 'order:cancelled',
 }
 // interface to make sure event names are consistent
