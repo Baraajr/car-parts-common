@@ -1,5 +1,5 @@
 {
-  "name": "@car-parts/common",
+  "name": "@abcar-parts/common",
   "version": "1.0.28",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
