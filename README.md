@@ -26,7 +26,7 @@ This module centralizes and exports the following utilities:
 
 ```bash
 # install module
-npm install @car-parts/common
+npm install @abcar-parts/common
 ```
 
 ---
@@ -38,7 +38,7 @@ import {
   requireAuth,
   validateRequest,
   BadRequestError,
-} from '@car-parts/common';
+} from '@abcar-parts/common';
 
 app.post('/api/resource', requireAuth, validateRequest, (req, res) => {
   if (!req.body.title) {

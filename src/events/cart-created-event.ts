@@ -13,6 +13,7 @@ export interface CartCreatedEvent {
   subject: Subjects.cartCreated;
   data: {
     id: string;
+    version: number;
     userId: string;
     versio:number
     cartItems: CartItemData[];
