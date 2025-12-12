@@ -14,6 +14,7 @@ export interface CartCreatedEvent {
   data: {
     id: string;
     userId: string;
+    versio:number
     cartItems: CartItemData[];
     totalCartPrice: number;
     totalPriceAfterDiscount?: number;

@@ -14,7 +14,7 @@ export interface OrderCreatedEvent {
   data: {
     id: string;
     userId: string;
-    ordersItems: OrderItem[];
+    orderItems: OrderItem[];
     orderStatus: string;
     version: number
     expiresAt: Date;

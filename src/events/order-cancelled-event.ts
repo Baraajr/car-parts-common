@@ -14,6 +14,6 @@ export interface OrderCancelledEvent {
   data: {
     id: string;
     version: number;
-    ordersItems: OrderItem[];
+    orderItems: OrderItem[];
   };
 }
