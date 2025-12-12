@@ -6,6 +6,7 @@ export interface CouponUpdatedEvent {
   data: {
     id: string;
     name: string;
+    version: number
     expire: Date;
     discount: number;
   };

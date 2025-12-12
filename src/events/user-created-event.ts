@@ -5,6 +5,7 @@ export interface UserCreatedEvent {
   subject: Subjects.UserCreated;
   data: {
     id: string;
+    version: number
     name: string;
     email: string;
   };

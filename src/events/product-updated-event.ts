@@ -8,6 +8,7 @@ export interface ProductUpdatedEvent {
     sold: number;
     id: string;
     name?: string;
+    version: number;
     imageCover?: string;
     price?: number;
     priceAfterDiscount?: number;

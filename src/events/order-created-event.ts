@@ -16,6 +16,7 @@ export interface OrderCreatedEvent {
     userId: string;
     ordersItems: OrderItem[];
     orderStatus: string;
+    version: number
     expiresAt: Date;
     price: number;
     idempotencyKey: string;

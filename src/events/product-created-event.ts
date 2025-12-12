@@ -7,6 +7,7 @@ export interface ProductCreatedEvent {
     quantity: number;
     sold: number;
     id: string;
+    version: number;
     name: string;
     imageCover: string;
     price: number;

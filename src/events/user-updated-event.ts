@@ -7,6 +7,7 @@ export interface UserUpdatedEvent {
   data: {
     id: string;
     name?: string;
+    version: number
     email?: string;
     role?: UserRole;
     active?: boolean;

@@ -12,5 +12,7 @@ export enum Subjects {
   cartUpdated = 'cart:updated',
   OrderCreated = 'order:created',
   OrderCancelled = 'order:cancelled',
+  PaymentCreated = 'payment:created',
+  ExpirationComplete = 'expiration:complete'
 }
 // interface to make sure event names are consistent

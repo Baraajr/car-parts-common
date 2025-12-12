@@ -5,6 +5,7 @@ interface CartItemData {
   product: string;
   quantity: number;
   price: number;
+  version: number
   productName?: string;
   productImg?: string;
 }
