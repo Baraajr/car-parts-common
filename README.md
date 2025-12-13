@@ -18,7 +18,7 @@ This module centralizes and exports the following utilities:
 
 - **`Publisher`** and **`Listener`** – Base classes built around NATS streaming server.
 - **`Subjects`** – Enum defining event subjects.
-- **Events** – Interfaces for event contracts (e.g., `TicketCreatedEvent`, `OrderCancelledEvent`).
+- **Events** – Interfaces for event contracts (e.g., `OrderCreatedEvent`, `OrderCancelledEvent`).
 
 ## 🚀 Getting Started
 
@@ -35,16 +35,23 @@ npm install @abcar-parts/common
 
 ```ts
 import {
+  currentUser,
   requireAuth,
   validateRequest,
   BadRequestError,
 } from '@abcar-parts/common';
 
-app.post('/api/resource', requireAuth, validateRequest, (req, res) => {
-  if (!req.body.title) {
-    throw new BadRequestError('Title is required');
-  }
+app.post(
+  '/api/resource',
+  currentUser,
+  requireAuth,
+  validateRequest,
+  (req, res) => {
+    if (!req.body.title) {
+      throw new BadRequestError('Title is required');
+    }
 
-  res.status(201).send({ success: true });
-});
+    res.status(201).send({ success: true });
+  }
+);
 ```
